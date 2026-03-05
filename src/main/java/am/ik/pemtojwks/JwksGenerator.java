@@ -27,6 +27,7 @@ public class JwksGenerator implements CommandLineRunner {
 		this.objectMapper = objectMapper;
 	}
 
+	// https://github.com/kubernetes/kubernetes/pull/78502
 	static String keyIDFromPublicKey(PublicKey publicKey) throws Exception {
 		byte[] publicKeyDERBytes = publicKey.getEncoded();
 		MessageDigest hasher = MessageDigest.getInstance("SHA-256");
